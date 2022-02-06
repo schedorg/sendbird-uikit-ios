@@ -72,7 +72,7 @@ open class SBUCreateChannelViewController: SBUBaseViewController {
     public private(set) var channelType: ChannelType = .group
     
     @SBUAtomic public private(set) var userList: [SBUUser] = []
-    @SBUAtomic public private(set) var selectedUserList: Set<SBUUser> = []
+    @SBUAtomic public var selectedUserList: Set<SBUUser> = []
 
     public private(set) var userListQuery: SBDApplicationUserListQuery?
 
