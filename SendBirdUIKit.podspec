@@ -16,8 +16,11 @@ Pod::Spec.new do |s|
 	"Kai" => "kai.lee@sendbird.com"
   	}
 	s.platform     = :ios, "12.0"
-	s.source = { :git => "https://github.com/sendbird/sendbird-uikit-ios.git", :tag => "v#{s.version}" }
-	s.ios.vendored_frameworks = 'Framework/SendBirdUIKit.xcframework'
+	s.source = { :git => "https://github.com/schedorg/sendbird-uikit-ios.git", :branch => "bill-search-support" }
+#	s.ios.vendored_frameworks = 'Framework/SendBirdUIKit.xcframework'
+    s.ios.source_files = 'Sources/**/*.swift'
+    s.ios.exclude_files = 'Sources/SendBirdUIKit.h', 'Sources/Info.plist'
+    s.ios.resource_bundle = {'SendBirdUIKit' => 'Sources/Resource/Assets.xcassets'}
 	s.ios.frameworks = ["UIKit", "Foundation", "CoreData", "SendBirdSDK"]
 	s.requires_arc = true
 	s.dependency "SendBirdSDK", ">= 3.1.39"

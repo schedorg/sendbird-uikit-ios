@@ -10,7 +10,7 @@ import UIKit
 import SendBirdSDK
 
 @objcMembers
-public class SBUUser: NSObject {
+open class SBUUser: NSObject {
     public private(set) var userId: String
     public private(set) var nickname: String?
     public private(set) var profileUrl: String?
@@ -83,7 +83,7 @@ public class SBUUser: NSObject {
     // MARK: - Common
     /// This method returns the default value if there is no alias value.
     /// - since: 1.0.1
-    public func refinedNickname() -> String {
+    open func refinedNickname() -> String {
         if let nickname = self.nickname, nickname.count > 0 {
             return nickname
         } else {

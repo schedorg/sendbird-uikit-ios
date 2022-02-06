@@ -42,7 +42,11 @@ open class SBUUserCell: UITableViewCell {
         return imageView
     }()
     
-    public var userNameLabel = UILabel()
+    public var userNameLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        return label
+    }()
     
     public lazy var operatorLabel: UILabel = {
         let label = UILabel()
