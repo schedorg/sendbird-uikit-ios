@@ -509,7 +509,7 @@ public class SBUMain: NSObject {
                                                   messageListParams: SBDMessageListParams?,
                                                   channelType: ChannelType) {
         // Dismiss any presented view controllers before pushing other vc on top
-        viewController?.presentedViewController?.dismiss(animated: false, completion: nil)
+        viewController?.presentedViewController?.dismiss(animated: true, completion: nil)
         
         if let channelListViewController = viewController as? SBUBaseChannelListViewController {
             channelListViewController
@@ -557,8 +557,8 @@ public class SBUMain: NSObject {
     private static func findChannelViewController(rootViewController: UIViewController?,
                                                   channelType: ChannelType) -> UIViewController? {
         guard let navigationController: UINavigationController =
-                rootViewController?.presentedViewController as? UINavigationController ??
-                rootViewController as? UINavigationController else { return nil }
+                rootViewController as? UINavigationController ??
+                rootViewController?.presentedViewController as? UINavigationController else { return nil }
         
         if let channelListVc = navigationController
             .viewControllers
