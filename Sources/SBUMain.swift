@@ -618,7 +618,7 @@ public class SBUMain: NSObject {
         params.name = ""
         params.coverUrl = ""
         params.addUserIds(userIds)
-        params.isDistinct = false
+        params.isDistinct = true
         
         if let currentUser = SBUGlobals.CurrentUser {
             params.operatorUserIds = [currentUser.userId]
