@@ -470,6 +470,9 @@ public class SBUMain: NSObject {
             rootViewController = tabbarController.selectedViewController
         }
         else if let tabbarController: UITabBarController = rootViewController as? UITabBarController {
+            if let ctrl = tabbarController.viewControllers?.first(where: { $0.tabBarItem.title == "Chat" }) {
+                tabbarController.selectedViewController = ctrl
+            }
             rootViewController = tabbarController.selectedViewController
         }
         
