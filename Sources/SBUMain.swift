@@ -315,7 +315,7 @@ public class SBUMain: NSObject {
     /// This function gets UIKit SDK's version string.
     /// - Returns: version string
     public static func versionString() -> String? {
-        let bundle = Bundle(identifier: "com.sendbird.uikit")
+        let bundle = Bundle(identifier: "org.cocoapods.SendBirdUIKit")
         if let build = bundle?.infoDictionary?[kCFBundleVersionKey as String] {
             return "\(build)"
         }
@@ -332,7 +332,7 @@ public class SBUMain: NSObject {
     /// - Returns: short version string
     @available(*, unavailable, renamed: "shortVersion") // 2.2.0
     public static func shortVersionString() -> String? {
-        let bundle = Bundle(identifier: "com.sendbird.uikit")
+        let bundle = Bundle(identifier: "org.cocoapods.SendBirdUIKit")
         if let shortVersion = bundle?.infoDictionary?["CFBundleShortVersionString"] {
             return "\(shortVersion)"
         }

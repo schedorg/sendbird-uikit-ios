@@ -29,7 +29,7 @@ class SBUConstant {
     
     static let sbdExtensionKeyUIKit = "sb_uikit"
     
-    static let bundleIdentifier = "com.sendbird.uikit"
+    static let bundleIdentifier = "org.cocoapods.SendBirdUIKit"
     
     static let channelDelegateIdentifier = "\(bundleIdentifier).delegate.channel"
     
