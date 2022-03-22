@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
 #	s.ios.vendored_frameworks = 'Framework/SendBirdUIKit.xcframework'
     s.ios.source_files = 'Sources/**/*.swift'
     s.ios.exclude_files = 'Sources/SendBirdUIKit.h', 'Sources/Info.plist'
-    s.ios.resource_bundle = {'SendBirdUIKit' => 'Sources/Resource/Assets.xcassets'}
+    s.ios.resource_bundle = {'SendBirdUIKit' => ['Sources/Resource/Assets.xcassets', 'Sources/View/Common/Menu/SBUMenuCell.xib', 'Sources/View/Channel/Reaction/SBUReactionCollectionViewCell.xib']}
 	s.ios.frameworks = ["UIKit", "Foundation", "CoreData", "SendBirdSDK"]
 	s.requires_arc = true
 	s.dependency "SendBirdSDK", ">= 3.1.39"
