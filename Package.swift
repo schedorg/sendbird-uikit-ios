@@ -8,7 +8,7 @@ let package = Package(
     products: [
         .library(
             name: "SendBirdUIKit",
-            targets: ["SendBirdUIKitTarget"]
+            targets: ["SendBirdUIKit"]
         ),
     ],
     dependencies: [
@@ -19,18 +19,21 @@ let package = Package(
         ),
     ],
     targets: [
-        .binaryTarget(
-            name: "SendBirdUIKit",
-            path: "Framework/SendBirdUIKit.xcframework"
-        ),
+        // .binaryTarget(
+        //     name: "SendBirdUIKit",
+        //     path: "Framework/SendBirdUIKit.xcframework"
+        // ),
         .target(
-            name: "SendBirdUIKitTarget",
+            name: "SendBirdUIKit",
             dependencies: [
-                .target(name: "SendBirdUIKit"),
+//                .target(name: "SendBirdUIKit"),
                 .product(name: "SendBirdSDK", package: "SendBirdSDK")
             ],
-            path: "Framework/Dependency",
-            exclude: ["../../Sample", "../../Sources"]
+            // path: "Framework/Dependency",
+            // exclude: ["../../Sample", "../../Sources"]
+            path: "Sources",
+            exclude: ["SendBirdUIKit.h", "Info.plist"],
+            resources: [.process("Resource/Assets.xcassets"), .process("View/Common/Menu/SBUMenuCell.xib"), .process("View/Channel/Reaction/SBUReactionCollectionViewCell.xib")]
         ),
     ]
 )
