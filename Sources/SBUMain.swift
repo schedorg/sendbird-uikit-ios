@@ -167,7 +167,7 @@ public class SBUMain: NSObject {
                 profileUrl: currentUser.profileUrl ?? user.profileUrl
             ) { error in
                 
-                #if !targetEnvironment(simulator)
+//                #if !targetEnvironment(simulator)
                 if let pendingPushToken = SBDMain.getPendingPushToken() {
                     SBULog.info("[Request] Register pending push token to Sendbird server")
                     SBUMain.registerPush(deviceToken: pendingPushToken) { success in
@@ -177,7 +177,7 @@ public class SBUMain: NSObject {
                         SBULog.info("[Succeed] Register pending push token to Sendbird server")
                     }
                 }
-                #endif
+//                #endif
                 
                 completionHandler(user, error)
             }
@@ -214,7 +214,7 @@ public class SBUMain: NSObject {
             profileUrl: sbuUser.profileUrl ?? sbdUser.profileUrl
         ) { error in
             
-            #if !targetEnvironment(simulator)
+//            #if !targetEnvironment(simulator)
             if let pendingPushToken = SBDMain.getPendingPushToken() {
                 SBULog.info("[Request] Register pending push token to Sendbird server")
                 SBUMain.registerPush(deviceToken: pendingPushToken) { success in
@@ -224,7 +224,7 @@ public class SBUMain: NSObject {
                     SBULog.info("[Succeed] Register pending push token to Sendbird server")
                 }
             }
-            #endif
+//            #endif
             
             completionHandler(error)
         }
@@ -351,7 +351,7 @@ public class SBUMain: NSObject {
                                     completionHandler: @escaping (_ success: Bool) -> Void) {
         SBULog.info("[Request] Register push token to Sendbird server")
         
-        #if !targetEnvironment(simulator)
+//        #if !targetEnvironment(simulator)
         SBDMain.registerDevicePushToken(deviceToken, unique: true) { status, error in
             switch status {
             case .success:
@@ -371,9 +371,9 @@ public class SBUMain: NSObject {
                 completionHandler(false)
             }
         }
-        #else
-        completionHandler(false)
-        #endif
+//        #else
+//        completionHandler(false)
+//        #endif
     }
     
     /// This function is used to unregister push token on the Sendbird server.
@@ -385,7 +385,7 @@ public class SBUMain: NSObject {
                 return
             }
             
-            #if !targetEnvironment(simulator)
+//            #if !targetEnvironment(simulator)
             guard let pendingPushToken = SBDMain.getPendingPushToken() else {
                 completionHandler(false)
                 return
@@ -404,9 +404,9 @@ public class SBUMain: NSObject {
                 SBULog.info("[Succeed] Push unregistration is success.")
                 completionHandler(true)
             }
-            #else
-            completionHandler(false)
-            #endif
+//            #else
+//            completionHandler(false)
+//            #endif
         }
     }
     
