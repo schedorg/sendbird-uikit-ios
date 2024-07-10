@@ -14,8 +14,8 @@ let package = Package(
     dependencies: [
         .package(
             name: "SendBirdSDK",
-            url: "https://github.com/sendbird/sendbird-chat-ios-spm",
-            from: "3.1.39"
+            url: "https://github.com/schedorg/sendbird-chat-ios-spm",
+            from: "3.1.56"
         ),
     ],
     targets: [
