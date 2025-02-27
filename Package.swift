@@ -15,7 +15,7 @@ let package = Package(
         .package(
             name: "SendBirdSDK",
             url: "https://github.com/schedorg/sendbird-chat-ios-spm",
-            from: "3.1.56"
+            from: "3.1.58"
         ),
     ],
     targets: [
