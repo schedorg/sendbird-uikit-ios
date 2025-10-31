@@ -8,7 +8,6 @@
 
 import UIKit
 import SendBirdSDK
-import AssetsLibrary
 
 @objc protocol SBUFileViewerDelegate: NSObjectProtocol {
     func didSelectDeleteImage(message: SBDFileMessage)
