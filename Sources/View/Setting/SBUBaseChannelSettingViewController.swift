@@ -48,7 +48,7 @@ open class SBUBaseChannelSettingViewController: SBUBaseViewController {
         }
     }
     
-    public var rightBarButton: UIBarButtonItem? = nil {
+    open var rightBarButton: UIBarButtonItem? = nil {
         didSet {
             if let groupChannel = self.baseChannel as? SBDGroupChannel {
                 if !groupChannel.isBroadcast || groupChannel.myRole == .operator {
@@ -70,7 +70,7 @@ open class SBUBaseChannelSettingViewController: SBUBaseViewController {
     let actionSheetIdPicker = 2
     
     /// Exposed as group / open in inherited classes.
-    var baseChannel: SBDBaseChannel?
+    public internal(set) var baseChannel: SBDBaseChannel?
     var channelActionViewModel: SBUChannelActionViewModel = SBUChannelActionViewModel() {
         willSet { self.disposeViewModel() }
         didSet { self.bindViewModel() }
